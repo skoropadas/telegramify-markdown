@@ -9,6 +9,7 @@
 		"semantic-release": "semantic-release",
 		"prepare": "husky install"
 	},
+	"files": ["README.md", "LICENSE", "index.js", "lib"],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/skoropadas/telegramify-markdown.git"
