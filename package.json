@@ -1,66 +1,48 @@
 {
-  "name": "telegramify-markdown",
-  "version": "1.0.0",
-  "description": "Convert markdown into Telegram-specific markdown",
-  "main": "index.js",
-  "scripts": {
-    "test": "jasmine",
-    "lint": "eslint",
-    "semantic-release": "semantic-release",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skoropadas/telegramify-markdown.git"
-  },
-  "keywords": [
-    "telegram",
-    "markdown",
-    "telegramify",
-    "parser",
-    "remark",
-    "unified"
-  ],
-  "author": "Skoropad Aleksandr",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/skoropadas/telegramify-markdown/issues"
-  },
-  "homepage": "https://github.com/skoropadas/telegramify-markdown#readme",
-  "peerDependencies": {
-    "semantic-release": ">=11.0.0 <18.0.0"
-  },
-  "dependencies": {
-    "mdast-util-to-markdown": "^0.6.2",
-    "remark-gfm": "^1.0.0",
-    "remark-parse": "^9.0.0",
-    "remark-stringify": "^9.0.1",
-    "unified": "^9.0.0",
-    "unist-util-remove": "^2.0.1",
-    "unist-util-visit": "^2.0.3"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
-    "eslint": "^7.24.0",
-    "husky": "^6.0.0",
-    "jasmine": "^3.7.0",
-    "lint-staged": "^10.5.4",
-    "prettier": "2.2.1",
-    "semantic-release": "^17.4.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss,less}": "stylelint --fix",
-    "*.js": "eslint --fix"
-  }
+	"name": "telegramify-markdown",
+	"version": "1.0.0",
+	"description": "Convert markdown into Telegram-specific markdown",
+	"main": "index.js",
+	"scripts": {
+		"test": "jasmine",
+		"lint": "eslint",
+		"semantic-release": "semantic-release",
+		"prepare": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/skoropadas/telegramify-markdown.git"
+	},
+	"keywords": ["telegram", "markdown", "telegramify", "parser", "remark", "unified"],
+	"author": "Skoropad Aleksandr",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/skoropadas/telegramify-markdown/issues"
+	},
+	"homepage": "https://github.com/skoropadas/telegramify-markdown#readme",
+	"dependencies": {
+		"mdast-util-to-markdown": "^0.6.2",
+		"remark-gfm": "^1.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-stringify": "^9.0.1",
+		"unified": "^9.0.0",
+		"unist-util-remove": "^2.0.1",
+		"unist-util-visit": "^2.0.3"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^12.1.1",
+		"@commitlint/config-conventional": "^12.1.1",
+		"eslint": "^7.24.0",
+		"husky": "^6.0.0",
+		"jasmine": "^3.7.0",
+		"lint-staged": "^10.5.4",
+		"prettier": "2.2.1",
+		"semantic-release": "^17.4.2"
+	},
+	"lint-staged": {
+		"*.{js,json,md}": ["prettier --write", "git add"],
+		"*.{css,scss,less}": "stylelint --fix",
+		"*.js": "eslint --cache --fix",
+		"*.{js,css,md}": "prettier --write"
+	}
 }
