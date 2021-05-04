@@ -17,7 +17,9 @@ npm install telegramify-markdown
 ```js
 const telegramifyMarkdown = require('telegramify-markdown');
 const markdown = `
-# List of items
+# List of items 
+
+[1.0.0](http://version.com)
 
 * item 1
 * item 2
@@ -29,14 +31,14 @@ const markdown = `
 telegramifyMarkdown(markdown);
 /*
  *List of items*
+ 
+[1\.0\.0](http://version.com)
 
  • item 1
  • item 2
  • item 3
 
- [here is an example\.](https://example.com)
-/
-*
+*/
 ```
 
 [MIT Licence](LICENSE)

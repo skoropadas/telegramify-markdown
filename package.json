@@ -4,7 +4,7 @@
 	"description": "Convert markdown into Telegram-specific markdown",
 	"main": "index.js",
 	"scripts": {
-		"test": "jasmine",
+		"test": "istanbul cover ./node_modules/jasmine/bin/jasmine.js -- --config=jasmine.json",
 		"lint": "eslint",
 		"semantic-release": "semantic-release",
 		"prepare": "husky install"
@@ -15,13 +15,15 @@
 		"url": "git+https://github.com/skoropadas/telegramify-markdown.git"
 	},
 	"keywords": ["telegram", "markdown", "telegramify", "parser", "remark", "unified"],
-	"author": "Skoropad Aleksandr",
+	"author": "Skoropad Aleksandr <skoropadas@yandex.ru>",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/skoropadas/telegramify-markdown/issues"
 	},
 	"homepage": "https://github.com/skoropadas/telegramify-markdown#readme",
 	"dependencies": {
+		"codecov": "^3.8.2",
+		"istanbul": "^0.4.5",
 		"mdast-util-to-markdown": "^0.6.2",
 		"remark-gfm": "^1.0.0",
 		"remark-parse": "^9.0.0",
@@ -43,7 +45,6 @@
 	"lint-staged": {
 		"*.{js,json,md}": ["prettier --write", "git add"],
 		"*.{css,scss,less}": "stylelint --fix",
-		"*.js": "eslint --cache --fix",
-		"*.{js,css,md}": "prettier --write"
+		"*.js": "eslint --cache --fix"
 	}
 }

@@ -1,25 +1,25 @@
 const convert = require('../lib/convert');
 
-const zws = String.fromCharCode(0x200B); // zero-width-space
+const zws = String.fromCharCode(0x200b); // zero-width-space
 
 describe('Test convert method', () => {
 	it('Text', () => {
 		const markdown = 'Hello world!';
-		const tgMarkdown = 'Hello world\\!\n'
+		const tgMarkdown = 'Hello world\\!\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
-	})
+	});
 
 	it('Escaped text', () => {
 		const markdown = 'Simple t`ext 2 + 2 * (32 / 32) = 4';
-		const tgMarkdown = 'Simple t\\`ext 2 \\+ 2 \\* \\(32 / 32\\) \\= 4\n'
+		const tgMarkdown = 'Simple t\\`ext 2 \\+ 2 \\* \\(32 / 32\\) \\= 4\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
-	})
+	});
 
 	it('Headings', () => {
 		const markdown = '# heading 1\n## heading 2\n### heading 3';
-		const tgMarkdown = '*heading 1*\n\n*heading 2*\n\n*heading 3*\n'
+		const tgMarkdown = '*heading 1*\n\n*heading 2*\n\n*heading 3*\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
-	})
+	});
 
 	it('Bold', () => {
 		const markdown = '**bold text**';
@@ -211,4 +211,4 @@ describe('Test convert method', () => {
 
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
-})
+});

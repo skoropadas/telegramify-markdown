@@ -23,7 +23,11 @@ jobs:
                     key: dependency-cache-{{ checksum "package-lock.json" }}
             -   run:
                     name: Lint test
-                    command: npm run lint
+                    command: |
+                        npm i -g codecov
+                        npm run lint
+                        npm run test
+                        codecov
     deploy:
         docker:
             -   image: circleci/node:10.18.0
@@ -34,7 +38,6 @@ jobs:
             -   run:
                     name: Semantic Release
                     command: npm run semantic-release
-
 workflows:
     version: 2.1
     build-test-deploy:
