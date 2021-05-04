@@ -1,6 +1,7 @@
 # Telegramify-Markdown
 
 [![CircleCI](https://circleci.com/gh/skoropadas/telegramify-markdown.svg?style=svg)](https://circleci.com/gh/skoropadas/telegramify-markdown)
+[![codecov](https://codecov.io/gh/skoropadas/telegramify-markdown/branch/master/graph/badge.svg?token=LxCmgGNUHl)](https://codecov.io/gh/skoropadas/telegramify-markdown)
 
 Telegramify-Markdown is a Markdown
 to [Telegram-specific-markdown](https://core.telegram.org/bots/api#formatting-options) converter, based
