@@ -24,7 +24,6 @@ jobs:
             -   run:
                     name: Lint test
                     command: |
-                        npm i -g codecov
                         npm run lint
                         npm run test
                         codecov

@@ -22,8 +22,6 @@
 	},
 	"homepage": "https://github.com/skoropadas/telegramify-markdown#readme",
 	"dependencies": {
-		"codecov": "^3.8.2",
-		"istanbul": "^0.4.5",
 		"mdast-util-to-markdown": "^0.6.2",
 		"remark-gfm": "^1.0.0",
 		"remark-parse": "^9.0.0",
@@ -33,6 +31,8 @@
 		"unist-util-visit": "^2.0.3"
 	},
 	"devDependencies": {
+		"codecov": "^3.8.2",
+		"istanbul": "^0.4.5",
 		"@commitlint/cli": "^12.1.1",
 		"@commitlint/config-conventional": "^12.1.1",
 		"eslint": "^7.24.0",
