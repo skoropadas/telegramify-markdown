@@ -26,7 +26,7 @@ const markdown = `
 * item 2
 * item 3
 
-[here is an example.](https://example.com)
+And simple text with + some - symbols.
 `;
 
 telegramifyMarkdown(markdown);
@@ -39,6 +39,7 @@ telegramifyMarkdown(markdown);
  • item 2
  • item 3
 
+And simple text with \+ some \- symbols\.
 */
 ```
 
