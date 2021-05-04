@@ -7,7 +7,8 @@
 		"test": "istanbul cover ./node_modules/jasmine/bin/jasmine.js -- --config=jasmine.json",
 		"lint": "eslint",
 		"semantic-release": "semantic-release",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"codecov": "codecov"
 	},
 	"files": ["README.md", "LICENSE", "index.js", "lib"],
 	"repository": {

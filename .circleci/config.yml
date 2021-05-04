@@ -26,7 +26,7 @@ jobs:
                     command: |
                         npm run lint
                         npm run test
-                        codecov
+                        npm run codecov
     deploy:
         docker:
             -   image: circleci/node:10.18.0
