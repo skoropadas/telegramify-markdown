@@ -1,7 +1,5 @@
 const convert = require('../lib/convert');
 
-const zws = String.fromCharCode(0x200b); // zero-width-space
-
 describe('Test convert method', () => {
 	it('Text', () => {
 		const markdown = 'Hello world!';
@@ -23,29 +21,29 @@ describe('Test convert method', () => {
 
 	it('Bold', () => {
 		const markdown = '**bold text**';
-		const tgMarkdown = `${zws}*bold text*${zws}\n`;
+		const tgMarkdown = `*bold text*\n`;
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
 	it('Bold character in word', () => {
-		expect(convert('he**l**lo')).toBe(`he${zws}*l*${zws}lo\n`);
+		expect(convert('he**l**lo')).toBe(`he*l*lo\n`);
 	});
 
 	it('Italic', () => {
 		const markdown = '*italic text*';
-		const tgMarkdown = `${zws}_italic text_${zws}\n`;
+		const tgMarkdown = `_italic text_\n`;
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
 	it('Bold+Italic', () => {
 		const markdown = '***bold+italic***';
-		const tgMarkdown = `${zws}_${zws}*bold\\+italic*${zws}_${zws}\n`;
+		const tgMarkdown = `_*bold\\+italic*_\n`;
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
 	it('Strike', () => {
 		const markdown = '~~strike text~~';
-		const tgMarkdown = `${zws}~strike text~${zws}\n`;
+		const tgMarkdown = `~strike text~\n`;
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
