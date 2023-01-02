@@ -55,7 +55,7 @@ describe('Test convert method', () => {
 
 	it('Ordered list', () => {
 		const markdown = '1. list\n2. list\n3. list';
-		const tgMarkdown = '1.  list\n2.  list\n3.  list\n';
+		const tgMarkdown = '1\\.  list\n2\\.  list\n3\\.  list\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
