@@ -1,6 +1,6 @@
 # Telegramify-Markdown
 
-[![CircleCI](https://circleci.com/gh/skoropadas/telegramify-markdown.svg?style=svg)](https://circleci.com/gh/skoropadas/telegramify-markdown)
+[![Build](https://img.shields.io/github/actions/workflow/status/skoropadas/telegramify-markdown/release.yml?branch=master)](https://github.com/skoropadas/telegramify-markdown/actions)
 [![codecov](https://codecov.io/gh/skoropadas/telegramify-markdown/branch/master/graph/badge.svg?token=LxCmgGNUHl)](https://codecov.io/gh/skoropadas/telegramify-markdown)
 ![License](https://img.shields.io/github/license/skoropadas/telegramify-markdown)
 
