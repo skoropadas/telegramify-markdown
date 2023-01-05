@@ -209,4 +209,11 @@ describe('Test convert method', () => {
 
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
+
+	it('HTML Comment', () => {
+		const markdown = '<!-- Comment -->';
+		const tgMarkdown = '';
+
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
 });
