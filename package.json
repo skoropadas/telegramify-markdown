@@ -28,7 +28,7 @@
 		"remark",
 		"unified"
 	],
-	"author": "Skoropad Aleksandr <skoropadas@yandex.ru>",
+	"author": "Skoropad Aleksandr <alex@skoropad.dev>",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/skoropadas/telegramify-markdown/issues"
