@@ -46,4 +46,39 @@ And simple text with \+ some \- symbols\.
 */
 ```
 
+## Possible options
+
+You can also add unsupported tags strategy as a second argument, which can be one of the following:
+
+- `escape` - escape unsupported symbols for unsupported tags
+- `remove` - remove unsupported tags
+- `keep` - ignore unsupported tags (default)
+
+```js
+const telegramifyMarkdown = require('telegramify-markdown');
+const markdown = `
+# Header
+
+> Blockquote
+
+<div>Text in div</div>
+`;
+
+telegramifyMarkdown(markdown, 'escape');
+/*
+*Header*
+
+\> Blockquote
+
+<div\>Text in div</div\>
+*/
+
+telegramifyMarkdown(markdown, 'remove');
+/*
+*Header*
+ */
+```
+
+sec
+
 [MIT Licence](LICENSE)

@@ -230,4 +230,36 @@ describe('Test convert method', () => {
 
 		expect(convert(markdown)).toBe(tgMarkdown);
 	})
+
+	describe('escape unsupported tags', () => {
+		it('should escape blockquote', () => {
+			const markdown = '> test';
+			const tgMarkdown = '\\> test\n';
+
+			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
+		});
+
+		it('should escape html', () => {
+			const markdown = '<div></div>';
+			const tgMarkdown = '<div\\></div\\>\n';
+
+			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
+		});
+	})
+
+	describe('remove unsupported tags', () => {
+		it('should remove blockquote', () => {
+			const markdown = '> test';
+			const tgMarkdown = '';
+
+			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
+		});
+
+		it('should remove html', () => {
+			const markdown = '<div></div>';
+			const tgMarkdown = '';
+
+			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
+		});
+	})
 });
