@@ -231,6 +231,13 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	})
 
+	it(`Multiple code blocks and lists`, () => {
+		const markdown = `1. Foo:\n\n\`\`\`\nBar\n\`\`\`\n\n2. Baz:\n\n\`\`\`\nQux\n\`\`\``;
+		const tgMarkdown = `1\\.  Foo:\n\n\n\`\`\`\nBar\n\`\`\`\n\n2\\.  Baz:\n\n\n\`\`\`\nQux\n\`\`\`\n`;
+
+		expect(convert(markdown)).toBe(tgMarkdown);
+	})
+
 	describe('escape unsupported tags', () => {
 		it('should escape blockquote', () => {
 			const markdown = '> test';
