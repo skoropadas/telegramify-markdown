@@ -89,6 +89,12 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
+	it('Link with invalid URL', () => {
+		const markdown = '[test](/atlassian)';
+		const tgMarkdown = 'test\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
 	it('Link with parentheses', () => {
 		const markdown = '[Atlassian](http://atlas()sian.com)';
 		const tgMarkdown = '[Atlassian](http://atlas\\(\\)sian.com)\n';
