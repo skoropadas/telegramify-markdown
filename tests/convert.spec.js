@@ -119,6 +119,13 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
+	it('Link in reference style with parentheses', () => {
+		const markdown = '[Atlassian](http://atlas()sian.com)';
+		const tgMarkdown = '[Atlassian](http://atlas\\(\\)sian.com)\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
+
 	it('Image with title', () => {
 		const markdown = '![](https://bitbucket.org/repo/123/images/logo.png "test")';
 		const tgMarkdown = '[test](https://bitbucket.org/repo/123/images/logo.png)\n';
