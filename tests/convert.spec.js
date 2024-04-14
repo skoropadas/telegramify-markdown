@@ -89,6 +89,12 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
+	it('Link that is already encoded', () => {
+		const markdown = '[Atlassian](http://atlassian.com?s=%7B0622CBE5)';
+		const tgMarkdown = '[Atlassian](http://atlassian.com?s=%7B0622CBE5)\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
 	it('Link in reference style with alt', () => {
 		const markdown = '[Atlassian]\n\n[atlassian]: http://atlassian.com';
 		const tgMarkdown = '[Atlassian](http://atlassian.com)\n';
