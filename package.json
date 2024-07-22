@@ -28,6 +28,7 @@
 		"remark",
 		"unified"
 	],
+	"types": "types/index.d.ts",
 	"author": "Skoropad Aleksandr <alex@skoropad.dev>",
 	"license": "MIT",
 	"bugs": {
