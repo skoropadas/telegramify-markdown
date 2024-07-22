@@ -14,7 +14,8 @@
 		"README.md",
 		"LICENSE",
 		"index.js",
-		"lib"
+		"lib",
+		"types"
 	],
 	"repository": {
 		"type": "git",
