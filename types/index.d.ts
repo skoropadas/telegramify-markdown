@@ -1,4 +1,4 @@
-export type UnsupportedTagsStrategy = 'escape' | 'remove' | 'keep'
+type UnsupportedTagsStrategy = 'escape' | 'remove' | 'keep'
 
 declare module 'telegramify-markdown' {
 
