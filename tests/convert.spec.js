@@ -250,6 +250,13 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	})
 
+	it('should not encode cyrillic symbols ', () => {
+		const markdown = '[test](http://example.com/сайт)';
+		const tgMarkdown = '[test](http://example.com/сайт)\n';
+
+		expect(convert(markdown)).toBe(tgMarkdown);
+	})
+
 	describe('escape unsupported tags', () => {
 		it('should escape blockquote', () => {
 			const markdown = '> test';
