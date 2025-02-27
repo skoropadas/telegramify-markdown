@@ -21,6 +21,3 @@ jobs:
 
             -   name: Test
                 run: npm run test
-
-            -   name: Codecov
-                run: npm run codecov
