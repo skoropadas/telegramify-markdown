@@ -257,6 +257,29 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	})
 
+	it('should nested codeblocks', () => {
+		const markdown = `
+\`\`\`\`markdown
+
+\`\`\`python
+foo = 'bar'
+\`\`\`
+
+\`\`\`\`
+
+		`;
+		const tgMarkdown = `\`\`\`
+
+\\\`\\\`\\\`python
+foo = 'bar'
+\\\`\\\`\\\`
+
+\`\`\`
+`;
+
+		expect(convert(markdown)).toBe(tgMarkdown);
+	})
+
 	describe('escape unsupported tags', () => {
 		it('should escape blockquote', () => {
 			const markdown = '> test';
