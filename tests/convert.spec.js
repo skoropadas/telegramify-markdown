@@ -287,6 +287,21 @@ foo = 'bar'
 
 			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
 		});
+
+
+		it('should escape table', () => {
+			const markdown = `| a | b | c | d |
+| - | :- | -: | :-: |
+| e | f |
+| g | h | i | j | k |`;
+			const tgMarkdown = `\\| a \\| b  \\|  c \\|  d  \\|   \\|
+\\| \\- \\| :\\- \\| \\-: \\| :\\-: \\| \\- \\|
+\\| e \\| f  \\|    \\|     \\|   \\|
+\\| g \\| h  \\|  i \\|  j  \\| k \\|
+`;
+
+			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
+		});
 	})
 
 	describe('remove unsupported tags', () => {
