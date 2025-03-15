@@ -288,7 +288,6 @@ foo = 'bar'
 			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
 		});
 
-
 		it('should escape table', () => {
 			const markdown = `| a | b | c | d |
 | - | :- | -: | :-: |
@@ -314,6 +313,16 @@ foo = 'bar'
 
 		it('should remove html', () => {
 			const markdown = '<div></div>';
+			const tgMarkdown = '';
+
+			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
+		});
+
+		it('should remove table', () => {
+			const markdown = `| a | b | c | d |
+| - | :- | -: | :-: |
+| e | f |
+| g | h | i | j | k |`;
 			const tgMarkdown = '';
 
 			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
