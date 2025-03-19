@@ -37,7 +37,7 @@
 	},
 	"homepage": "https://github.com/skoropadas/telegramify-markdown#readme",
 	"dependencies": {
-		"mdast-util-gfm-table": "^1.0.6",
+		"mdast-util-gfm-table": "^0.1.6",
 		"mdast-util-to-markdown": "^0.6.2",
 		"remark-gfm": "^1.0.0",
 		"remark-parse": "^9.0.0",
