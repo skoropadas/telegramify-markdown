@@ -272,14 +272,27 @@ foo = 'bar'
 
 		expect(convert(markdown)).toBe(tgMarkdown);
 	})
+	
+	it('Blockquote', () => {
+		const markdown = '> This is a blockquote';
+		const tgMarkdown = '>This is a blockquote\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+	
+	it('Multi-line blockquote', () => {
+		const markdown = '> Line 1\n> Line 2\n> Line 3';
+		const tgMarkdown = '>Line 1\n>Line 2\n>Line 3\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+	
+	it('Blockquote with formatting', () => {
+		const markdown = '> *Italic* and **bold** text in blockquote';
+		const tgMarkdown = '>_Italic_ and *bold* text in blockquote\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+	
 
 	describe('escape unsupported tags', () => {
-		it('should escape blockquote', () => {
-			const markdown = '> test';
-			const tgMarkdown = '\\> test\n';
-
-			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
-		});
 
 		it('should escape html', () => {
 			const markdown = '<div></div>';
@@ -304,12 +317,6 @@ foo = 'bar'
 	})
 
 	describe('remove unsupported tags', () => {
-		it('should remove blockquote', () => {
-			const markdown = '> test';
-			const tgMarkdown = '';
-
-			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
-		});
 
 		it('should remove html', () => {
 			const markdown = '<div></div>';
