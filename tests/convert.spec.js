@@ -21,7 +21,7 @@ describe('Test convert method', () => {
 
 	it('Thematic break', () => {
 		const markdown = '---';
-		const tgMarkdown = '\\-\\-\\-\n';
+		const tgMarkdown = '---\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
@@ -307,6 +307,13 @@ foo = 'bar'
 
 			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
 		});
+
+		it('should escape thematic break', () => {
+			const markdown = '---';
+			const tgMarkdown = '\\-\\-\\-\n';
+
+			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
+		});
 	})
 
 	describe('remove unsupported tags', () => {
@@ -329,6 +336,13 @@ foo = 'bar'
 | - | :- | -: | :-: |
 | e | f |
 | g | h | i | j | k |`;
+			const tgMarkdown = '';
+
+			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
+		});
+
+		it('should remove thematic break', () => {
+			const markdown = '---';
 			const tgMarkdown = '';
 
 			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
