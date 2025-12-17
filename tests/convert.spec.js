@@ -19,6 +19,12 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
+	it('Thematic break', () => {
+		const markdown = '---';
+		const tgMarkdown = '\\-\\-\\-\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
 	it('Bold', () => {
 		const markdown = '**bold text**';
 		const tgMarkdown = `*bold text*\n`;
