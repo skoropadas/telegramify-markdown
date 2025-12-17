@@ -79,6 +79,4 @@ telegramifyMarkdown(markdown, 'remove');
  */
 ```
 
-sec
-
 [MIT Licence](LICENSE)
