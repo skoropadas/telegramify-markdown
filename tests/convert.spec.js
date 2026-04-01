@@ -281,8 +281,8 @@ foo = 'bar'
 
 	describe('escape unsupported tags', () => {
 		it('should keep blockquote as supported', () => {
-			const markdown = '> test';
-			const tgMarkdown = '> test\n';
+			const markdown = '> test.';
+			const tgMarkdown = '> test\\.\n';
 
 			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
 		});
