@@ -280,9 +280,9 @@ foo = 'bar'
 	})
 
 	describe('escape unsupported tags', () => {
-		it('should escape blockquote', () => {
-			const markdown = '> test';
-			const tgMarkdown = '\\> test\n';
+		it('should keep blockquote as supported', () => {
+			const markdown = '> test.';
+			const tgMarkdown = '> test\\.\n';
 
 			expect(convert(markdown, 'escape')).toBe(tgMarkdown);
 		});
@@ -317,9 +317,9 @@ foo = 'bar'
 	})
 
 	describe('remove unsupported tags', () => {
-		it('should remove blockquote', () => {
+		it('should keep blockquote as supported', () => {
 			const markdown = '> test';
-			const tgMarkdown = '';
+			const tgMarkdown = '> test\n';
 
 			expect(convert(markdown, 'remove')).toBe(tgMarkdown);
 		});
