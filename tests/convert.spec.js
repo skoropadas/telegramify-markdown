@@ -13,6 +13,23 @@ describe('Test convert method', () => {
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
+	it('Literal backslashes in text', () => {
+		const markdown = 'Saved to C:\\new\\data';
+		const tgMarkdown = 'Saved to C:\\\\new\\\\data\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
+	it('Literal backslash before closing marker', () => {
+		const markdown = '# Saved to C:\\';
+		const tgMarkdown = '*Saved to C:\\\\*\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
+	it('Markdown backslash escapes are not doubled', () => {
+		expect(convert('a \\* b')).toBe('a \\* b\n');
+		expect(convert('a \\\\ b')).toBe('a \\\\ b\n');
+	});
+
 	it('Headings', () => {
 		const markdown = '# heading 1\n## heading 2\n### heading 3';
 		const tgMarkdown = '*heading 1*\n\n*heading 2*\n\n*heading 3*\n';
@@ -194,6 +211,18 @@ describe('Test convert method', () => {
 	it('Inline code', () => {
 		const markdown = 'hello `world`';
 		const tgMarkdown = 'hello `world`\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
+	it('Inline code with backslash', () => {
+		const markdown = 'Match digits with `\\d+`.';
+		const tgMarkdown = 'Match digits with `\\\\d+`\\.\n';
+		expect(convert(markdown)).toBe(tgMarkdown);
+	});
+
+	it('Inline code with backtick', () => {
+		const markdown = 'Use `` a`b `` here';
+		const tgMarkdown = 'Use `a\\`b` here\n';
 		expect(convert(markdown)).toBe(tgMarkdown);
 	});
 
