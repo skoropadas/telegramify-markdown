@@ -7,8 +7,7 @@
 		"test": "npx jest --coverage",
 		"lint": "eslint",
 		"semantic-release": "semantic-release",
-		"prepare": "husky install",
-		"codecov": "codecov"
+		"prepare": "husky install"
 	},
 	"files": [
 		"README.md",
@@ -48,12 +47,11 @@
 		"unist-util-visit": "^2.0.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^12.1.1",
-		"@commitlint/config-conventional": "^12.1.1",
-		"codecov": "^3.8.3",
+		"@commitlint/cli": "^21.2.4",
+		"@commitlint/config-conventional": "^21.2.4",
 		"eslint": "^7.24.0",
 		"husky": "^6.0.0",
-		"jest": "^29.3.1",
+		"jest": "^30.5.2",
 		"lint-staged": "^10.5.4",
 		"prettier": "2.2.1",
 		"semantic-release": "^25.0.9"
